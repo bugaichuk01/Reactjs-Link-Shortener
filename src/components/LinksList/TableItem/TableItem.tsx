@@ -1,6 +1,12 @@
 import React from 'react';
+import {ILink} from "../../../types/ILink";
 
-function TableItem({link, copy}: any) {
+interface TableItemTypes {
+    link: ILink;
+    copy: (value: string) => void
+}
+
+export const TableItem: React.FC<TableItemTypes> = ({link, copy}) => {
     return (
         <tr>
             <td>{link.id}</td>
@@ -12,12 +18,10 @@ function TableItem({link, copy}: any) {
             <td
                 className='text-primary'
                 style={{cursor: 'pointer'}}
-                onClick={() => copy(`${process.env.REACT_APP_URL}/${link.short}`)}
+                onClick={() => copy(`${process.env.REACT_APP_URL}/s/${link.short}`)}
             >
-                {`${process.env.REACT_APP_URL}/${link.short}`}</td>
+                {`${process.env.REACT_APP_URL}/s/${link.short}`}</td>
             <td>Переходы: {link.counter}</td>
         </tr>
     );
 }
-
-export default TableItem;
