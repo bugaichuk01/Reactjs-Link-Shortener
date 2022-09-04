@@ -53,7 +53,7 @@ const authSlice = createSlice({
         })
         builder.addCase(register.rejected, (state) => {
             state.registerStatus = 401
-            state.registerError = 'Логин и/или пароль не подходят'
+            state.registerError = 'Username занят'
         })
         builder.addCase(login.pending, (state) => {
             state.loginStatus = 202
@@ -66,13 +66,13 @@ const authSlice = createSlice({
                 state.loginError = ''
             } else {
                 state.loginStatus = 401
-                state.loginError = 'Логин и/или пароль не существуют'
+                state.loginError = 'Неверный логин и/или пароль'
             }
         })
         builder.addCase(login.rejected, (state, action) => {
             console.log(action.error)
             state.loginStatus = 401
-            state.loginError = 'Логин и/или пароль не существуют'
+            state.loginError = 'Неверный логин и/или пароль'
         })
     },
 })
