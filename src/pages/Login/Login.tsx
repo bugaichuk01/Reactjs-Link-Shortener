@@ -29,7 +29,7 @@ export const Login = () => {
                 request={(username: string, password: string) => dispatch(login({username, password}))}
             >
                 <Link className='link' to={'/registration'}>
-                    Не зарегистрированы?
+                    Еще не зарегистрированы?
                 </Link>
             </AuthLayout>
         </div>
