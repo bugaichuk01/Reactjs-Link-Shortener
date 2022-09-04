@@ -9,3 +9,10 @@ git clone https://github.com/bugaichuk01/Reactjs-Link-Shortener
 npm install
 npm start
 ```
+
+# Creating a docker image
+
+```
+docker build -t reactjs-link-shortener .
+docker run --name shortener -d -p 3000:3000 reactjs-link-shortener:latest 
+```
