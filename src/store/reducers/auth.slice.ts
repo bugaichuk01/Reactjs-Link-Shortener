@@ -72,7 +72,7 @@ const authSlice = createSlice({
         builder.addCase(login.rejected, (state, action) => {
             console.log(action.error)
             state.loginStatus = 401
-            state.loginError = 'Неверный логин и/или пароль'
+            state.loginError = 'Ошибка!'
         })
     },
 })
